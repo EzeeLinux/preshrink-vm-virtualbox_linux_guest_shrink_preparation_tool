@@ -12,7 +12,7 @@ wipe-home() {
 echo $'\n'$"Please ignore any pop-up warnings about low disk space."
 echo "Wiping free space in /home..."
 sudo touch /home/zero
-sudo dd if=/dev/zero of=/home/zero status=progress
+sudo dd if=/dev/zero of=/home/zero bs=64k status=progress
 sudo rm /home/zero
 echo "Moving on to /..."
 
@@ -23,7 +23,7 @@ wipe-root() {
 echo $'\n'$"Please ignore any pop-up warnings about low disk space."
 echo "Wiping free space..."
 sudo touch /zero
-sudo dd if=/dev/zero of=/zero status=progress
+sudo dd if=/dev/zero of=/zero bs=64k status=progress
 sudo rm /zero
 
 }
